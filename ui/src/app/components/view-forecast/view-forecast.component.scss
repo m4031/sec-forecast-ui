@@ -1,0 +1,43 @@
+.card {
+    background: var(--surface-card);
+    padding: 1rem;
+    border-radius: 1px;
+    margin-bottom: 1rem;
+}
+
+.oddrow {    
+    background: #e3e0e0;
+}
+
+.buy {    
+    background: green;
+    color: black
+}
+
+.sell {    
+    background: red;
+    color: black
+}
+
+.hold {    
+    background: yellow;
+    color: black
+}
+
+:host ::ng-deep {
+    .p-progressbar {
+        height: .5rem;
+        background-color: #D8DADC;
+    
+        .p-progressbar-value {
+            background-color: #607D8B;
+        }
+    }
+}
+
+button,
+.btn,
+select {
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}

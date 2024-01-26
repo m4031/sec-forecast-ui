@@ -1,0 +1,36 @@
+<!-- <p>news-updates-subscription works!</p> -->
+<section class="w3l-contact-1">
+  <div class="contacts-9 section-gap">
+    <div class="wrapper">
+      <div class="d-grid contact-view">
+        <h3 class="global-title text-center">Subscribe for news & updates</h3>
+        <div class="map-content-9">
+          <span class="text-success" *ngIf="model.subscriptionId">Your message is submitted. Reference ID is
+            {{model.subscriptionId}}</span>
+          <form (ngSubmit)="newsSingupForm.valid && newsSingup(newsSingupForm)" #newsSingupForm="ngForm">
+            <div class="twice">
+              <input type="text" class="form-control" name="name" id="name" placeholder="Name" required
+                [(ngModel)]="model.name" #name="ngModel">
+              <span class="text-danger" *ngIf="(name.touched || newsSingupForm.submitted) &&
+                name.errors?.['required']">Error : Name is required !</span>
+            </div>
+            <div class="twice">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Email"
+                required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="model.email"
+                #email="ngModel">
+              <span class="text-danger" *ngIf="(email.touched || newsSingupForm.submitted) &&
+                  email.errors?.['required']">Error : Email is required !</span>
+              <span class="text-danger" *ngIf="(email.touched || newsSingupForm.submitted) &&
+                email.errors?.['pattern']">Error : Please provide a valid email address !</span>
+            </div>
+            <button type="submit" class="btn btn-contact">Subscribe</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span *ngIf="isLoggedIn == true">
+              <button type="button" class="btn btn-contact" routerLink="/dashboard">BACK</button>
+            </span>         
+          </form>                  
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
